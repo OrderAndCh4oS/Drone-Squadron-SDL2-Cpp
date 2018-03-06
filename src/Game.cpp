@@ -17,11 +17,11 @@ Game::Game(int x, int y)
 
 void Game::start(SDL_Window* sdlWindow, SDL_Renderer* sdlRenderer)
 {
-    std::__cxx11::string imagePath = Texture::path("drone-blue.bmp");
+    std::__cxx11::string imagePath = Texture::path("drone-blue.gif");
     SDL_Texture* drone = Texture::get(imagePath, sdlWindow, sdlRenderer);
     SDL_RenderClear(sdlRenderer);
     Texture::render(drone, sdlRenderer, SCREEN_WIDTH/2+x, SCREEN_HEIGHT/2+y);
     SDL_RenderPresent(sdlRenderer);
     SDL_Delay(1);
-    y -= 5;
+    y -= 3;
 }

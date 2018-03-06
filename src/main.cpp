@@ -1,4 +1,5 @@
 #include "main.h"
+#include "constants.h"
 
 int main(int, char**)
 {
@@ -7,7 +8,7 @@ int main(int, char**)
     Init::sdl(&sdlWindow, &sdlRenderer);
 
     bool quit = false;
-    Game game(50, -50);
+    Game game(0, SCREEN_HEIGHT/2);
     SDL_Event e{};
     while (!quit) {
         while (SDL_PollEvent(&e)){
