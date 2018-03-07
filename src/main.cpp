@@ -1,11 +1,9 @@
 #include "main.h"
-#include "constants.h"
 
 int main(int, char**)
 {
-    SDL_Window* sdlWindow = nullptr;
-    SDL_Renderer* sdlRenderer = nullptr;
-    Init::sdl(&sdlWindow, &sdlRenderer);
+
+    Init::sdl();
 
     bool quit = false;
     Game game(0, SCREEN_HEIGHT/2);
@@ -16,12 +14,12 @@ int main(int, char**)
                 quit = true;
             }
         }
-        SDL_RenderClear(sdlRenderer);
-        game.start(sdlWindow, sdlRenderer);
+        SDL_RenderClear(gRenderer);
+        game.start();
     }
 
-    Deinit::renderer(sdlRenderer);
-    Deinit::window(sdlWindow);
+    Deinit::renderer(gRenderer);
+    Deinit::window(gWindow);
     IMG_Quit();
     SDL_Quit();
     return 0;

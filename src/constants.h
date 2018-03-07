@@ -5,8 +5,14 @@
 #ifndef SDLTEST_CONSTANTS_H
 #define SDLTEST_CONSTANTS_H
 
-const char* const SCREEN_TITLE {"Game Window"};
-const int SCREEN_WIDTH {640};
-const int SCREEN_HEIGHT {480};
+#include <SDL_video.h>
+#include <SDL_system.h>
+
+const char* const SCREEN_TITLE{"Game Window"};
+const int SCREEN_WIDTH{640};
+const int SCREEN_HEIGHT{480};
+
+extern SDL_Window* gWindow;
+extern SDL_Renderer* gRenderer;
 
 #endif //SDLTEST_CONSTANTS_H

@@ -11,7 +11,7 @@
 #include "Deinit.h"
 #include "constants.h"
 
-int Init::sdl(SDL_Window** window, SDL_Renderer** renderer)
+int Init::sdl()
 {
     {
 
@@ -21,18 +21,18 @@ int Init::sdl(SDL_Window** window, SDL_Renderer** renderer)
             return 1;
         }
 
-        *window = SDL_CreateWindow(SCREEN_TITLE, 100, 100, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
-        if (*window==nullptr) {
+        gWindow = SDL_CreateWindow(SCREEN_TITLE, 100, 100, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
+        if (gWindow==nullptr) {
             Logger::sdlError(std::cout, "SDL_CreateWindow Error: ");
             SDL_Quit();
 
             return 1;
         }
 
-        *renderer = SDL_CreateRenderer(*window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
-        if (*renderer==nullptr) {
+        gRenderer = SDL_CreateRenderer(gWindow, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
+        if (gRenderer==nullptr) {
             Logger::sdlError(std::cout, "SDL_CreateRenderer Error: ");
-            Deinit::window(*window);
+            Deinit::window(gWindow);
             SDL_Quit();
 
             return 1;

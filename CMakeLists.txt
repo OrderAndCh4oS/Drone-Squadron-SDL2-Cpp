@@ -23,7 +23,7 @@ elseif (${CMAKE_CXX_COMPILER_ID} STREQUAL "MSVC")
     endif()
 endif()
 
-add_executable(SDLTest src/main.cpp src/main.h src/Logger.cpp src/Logger.h src/Texture.cpp src/Texture.h src/Deinit.cpp src/Deinit.h src/Init.cpp src/Init.h src/constants.h src/Game.cpp src/Game.h)
+add_executable(SDLTest src/main.cpp src/main.h src/Logger.cpp src/Logger.h src/Texture.cpp src/Texture.h src/Deinit.cpp src/Deinit.h src/Init.cpp src/Init.h src/constants.h src/Game.cpp src/Game.h src/Resource.cpp src/Resource.h src/constants.cpp)
 
 INCLUDE(FindPkgConfig)
 
