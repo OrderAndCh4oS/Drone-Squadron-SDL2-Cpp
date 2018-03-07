@@ -13,10 +13,14 @@ Game::Game(int x, int y)
 void Game::start()
 {
     std::__cxx11::string imagePath = Resource::path("drone-blue.gif");
-    SDL_Texture* drone = Texture::get(imagePath);
+    auto* drone = new Texture();
+    drone->set(imagePath);
     SDL_RenderClear(gRenderer);
-    Texture::render(drone, SCREEN_WIDTH/2+x, SCREEN_HEIGHT/2+y);
+    drone->render(SCREEN_WIDTH/2+x, SCREEN_HEIGHT/2+y);
     SDL_RenderPresent(gRenderer);
     SDL_Delay(1);
+    drone->free();
     y -= 3;
 }
+
+

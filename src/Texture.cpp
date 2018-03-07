@@ -11,24 +11,44 @@
 #include "Deinit.h"
 #include "constants.h"
 
-SDL_Texture* Texture::load(const std::string& file)
+Texture::Texture()
 {
-    SDL_Texture* texture = IMG_LoadTexture(gRenderer, file.c_str());
+    texture = nullptr;
+    destination = {};
+}
+
+Texture::~Texture()
+{
+    free();
+}
+
+void Texture::render(int x, int y)
+{
+    centerDestination(x, y);
+    SDL_RenderCopy(gRenderer, texture, nullptr, &destination);
+}
+
+void Texture::centerDestination(int x, int y)
+{
+    destination.x = x-destination.w/2;
+    destination.y = y-destination.h/2;
+}
+
+void Texture::set(const std::string imagePath)
+{
+    free();
+    Texture::load(imagePath);
+    if (Texture::checkLoadSucceeded(&texture)==0) {
+        setDestination();
+    }
+}
+
+void Texture::load(const std::string& file)
+{
+    texture = IMG_LoadTexture(gRenderer, file.c_str());
     if (texture==nullptr) {
         Logger::sdlError(std::cout, "LoadTexture");
     }
-    return texture;
-}
-
-void Texture::render(SDL_Texture* tex, int x, int y)
-{
-    //Setup the destination rectangle to be at the position we want
-    SDL_Rect destination{};
-    //Query the Texture to get its width and height to use
-    SDL_QueryTexture(tex, nullptr, nullptr, &destination.w, &destination.h);
-    destination.x = x-destination.w/2;
-    destination.y = y-destination.h/2;
-    SDL_RenderCopy(gRenderer, tex, nullptr, &destination);
 }
 
 int Texture::checkLoadSucceeded(SDL_Texture** file)
@@ -45,9 +65,16 @@ int Texture::checkLoadSucceeded(SDL_Texture** file)
     return 0;
 }
 
-SDL_Texture* Texture::get(std::string imagePath)
+void Texture::free()
 {
-    SDL_Texture* texture = Texture::load(imagePath);
-    Texture::checkLoadSucceeded(&texture);
-    return texture;
+    if (texture!=nullptr) {
+        texture = nullptr;
+        destination = {};
+    }
+}
+
+void Texture::setDestination()
+{
+    //Query the Texture to get its width and height to use
+    SDL_QueryTexture(texture, nullptr, nullptr, &destination.w, &destination.h);
 }

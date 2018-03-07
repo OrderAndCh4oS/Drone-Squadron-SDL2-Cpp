@@ -4,6 +4,7 @@ int main(int, char**)
 {
 
     Init::sdl();
+    SDL_SetRenderDrawColor(gRenderer, 0x11, 0x11, 0x1F, 0xFF);
 
     bool quit = false;
     Game game(0, SCREEN_HEIGHT/2);

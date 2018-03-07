@@ -23,6 +23,7 @@ public:
      * Run the game
      */
     void start();
+
 };
 
 #endif //SDLTEST_GAME_H
