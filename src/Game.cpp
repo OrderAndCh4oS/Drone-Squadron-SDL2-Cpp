@@ -29,5 +29,10 @@ void Game::start()
     drone->render(SCREEN_WIDTH/3*2+x, SCREEN_HEIGHT/2+y, &clip[1]);
     SDL_RenderPresent(gRenderer);
     drone->free();
-    y -= 3;
+    move += 30*deltaTime->get();
+    if (move>=1) {
+        y -= floor(move);
+        double intPart{};
+        move = modf(move, &intPart);
+    }
 }

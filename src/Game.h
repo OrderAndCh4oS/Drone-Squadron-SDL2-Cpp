@@ -15,7 +15,7 @@
 class Game {
 private:
     int x{0}, y{0};
-
+    double move{0};
 public:
     Game(int x, int y);
 
@@ -23,6 +23,7 @@ public:
      * Run the game
      */
     void start();
+
 
 };
 
