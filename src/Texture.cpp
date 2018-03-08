@@ -22,10 +22,17 @@ Texture::~Texture()
     free();
 }
 
-void Texture::render(int x, int y)
+void Texture::render(int x, int y, SDL_Rect* clip, double angle, SDL_Point* center, SDL_RendererFlip flip)
 {
     centerDestination(x, y);
-    SDL_RenderCopy(gRenderer, texture, nullptr, &destination);
+
+    if (clip!=nullptr) {
+        destination.w = clip->w;
+        destination.h = clip->h;
+    }
+
+    //Render to screen
+    SDL_RenderCopyEx(gRenderer, texture, clip, &destination, angle, center, flip);
 }
 
 void Texture::centerDestination(int x, int y)
@@ -77,4 +84,14 @@ void Texture::setDestination()
 {
     //Query the Texture to get its width and height to use
     SDL_QueryTexture(texture, nullptr, nullptr, &destination.w, &destination.h);
+}
+
+int Texture::getWidth()
+{
+    return destination.w;
+}
+
+int Texture::getHeight()
+{
+    return destination.h;
 }

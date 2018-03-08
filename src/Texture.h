@@ -23,6 +23,7 @@ private:
     void setDestination();
 
     void centerDestination(int x, int y);
+
 public:
     Texture();
 
@@ -40,9 +41,11 @@ public:
      * Draw an SDL_Texture to an SDL_Renderer at position x, y, preserving
      * the texture's width and height
      * @param x The x coordinate to draw to
-     * @param y The y coordinate to draw to
+     * @param y The y coordinate to draw
+     * @param clip the sprite to rect
      */
-    void render(int x, int y);
+    void render(int x, int y, SDL_Rect* clip = nullptr, double angle = 0.0, SDL_Point* center = nullptr,
+            SDL_RendererFlip flip = SDL_FLIP_NONE);
 
     /**
      * Check that the Texture is loaded
@@ -51,6 +54,9 @@ public:
      */
     static int checkLoadSucceeded(SDL_Texture** file);
 
+    int getWidth();
+
+    int getHeight();
 };
 
 #endif //SDLTEST_TEXTURE_H

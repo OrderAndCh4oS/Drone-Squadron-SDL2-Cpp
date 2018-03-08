@@ -7,3 +7,4 @@
 
 SDL_Window* gWindow;
 SDL_Renderer* gRenderer;
+DeltaTime* deltaTime;

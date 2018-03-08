@@ -7,7 +7,6 @@
 
 #include <ostream>
 
-
 class Logger {
 public:
     /**
@@ -16,6 +15,15 @@ public:
      * @param msg The error message to write, format will be msg error: SDL_GetError()
      */
     static void sdlError(std::ostream& os, const std::string& msg);
+
+    /**
+     * Log a message
+     * @param os
+     * @param message
+     */
+    static void message(std::ostream& os, const std::string& message);
+
+    static void message(std::ostream& os, const int message);
 };
 
 #endif //SDLTEST_LOGGER_H

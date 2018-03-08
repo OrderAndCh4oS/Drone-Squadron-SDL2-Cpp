@@ -12,15 +12,22 @@ Game::Game(int x, int y)
 
 void Game::start()
 {
-    std::__cxx11::string imagePath = Resource::path("drone-blue.gif");
+    std::__cxx11::string imagePath = Resource::path("drone-pair.gif");
     auto* drone = new Texture();
     drone->set(imagePath);
     SDL_RenderClear(gRenderer);
-    drone->render(SCREEN_WIDTH/2+x, SCREEN_HEIGHT/2+y);
+    SDL_Rect clip[2];
+    clip[0].x = 0;
+    clip[0].y = 0;
+    clip[0].h = drone->getHeight();
+    clip[0].w = drone->getWidth()/2;
+    clip[1].x = drone->getWidth()/2;
+    clip[1].y = 0;
+    clip[1].h = drone->getHeight();
+    clip[1].w = drone->getWidth()/2;
+    drone->render(SCREEN_WIDTH/3+x, SCREEN_HEIGHT/2+y, &clip[0]);
+    drone->render(SCREEN_WIDTH/3*2+x, SCREEN_HEIGHT/2+y, &clip[1]);
     SDL_RenderPresent(gRenderer);
-    SDL_Delay(1);
     drone->free();
     y -= 3;
 }
-
-
