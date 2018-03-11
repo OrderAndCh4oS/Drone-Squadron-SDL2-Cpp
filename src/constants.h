@@ -8,7 +8,7 @@
 #include <SDL_video.h>
 #include <SDL_system.h>
 #include <SDL_timer.h>
-#include "DeltaTime.h"
+#include "utilities/DeltaTime.h"
 
 const char* const SCREEN_TITLE{"Game Window"};
 const int SCREEN_WIDTH{640};

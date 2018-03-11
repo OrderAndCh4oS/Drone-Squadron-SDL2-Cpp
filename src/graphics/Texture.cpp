@@ -7,9 +7,9 @@
 #include <SDL.h>
 #include <SDL_image.h>
 #include "Texture.h"
-#include "Logger.h"
-#include "Deinit.h"
-#include "constants.h"
+#include "../utilities/Logger.h"
+#include "../sdl_utilities/Deinit.h"
+#include "../constants.h"
 
 Texture::Texture()
 {

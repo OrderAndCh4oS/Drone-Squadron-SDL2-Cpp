@@ -7,9 +7,9 @@
 #include <SDL.h>
 #include <iostream>
 #include "Init.h"
-#include "Logger.h"
+#include "../utilities/Logger.h"
 #include "Deinit.h"
-#include "constants.h"
+#include "../constants.h"
 
 int Init::sdl()
 {

@@ -23,7 +23,7 @@ elseif (${CMAKE_CXX_COMPILER_ID} STREQUAL "MSVC")
     endif()
 endif()
 
-add_executable(SDLTest src/main.cpp src/main.h src/Logger.cpp src/Logger.h src/Texture.cpp src/Texture.h src/Deinit.cpp src/Deinit.h src/Init.cpp src/Init.h src/constants.h src/Game.cpp src/Game.h src/Resource.cpp src/Resource.h src/constants.cpp src/DeltaTime.cpp src/DeltaTime.h)
+add_executable(SDLTest src/main.cpp src/main.h src/utilities/Logger.cpp src/utilities/Logger.h src/graphics/Texture.cpp src/graphics/Texture.h src/sdl_utilities/Deinit.cpp src/sdl_utilities/Deinit.h src/sdl_utilities/Init.cpp src/sdl_utilities/Init.h src/constants.h src/Game.cpp src/Game.h src/graphics/Resource.cpp src/graphics/Resource.h src/constants.cpp src/utilities/DeltaTime.cpp src/utilities/DeltaTime.h src/geometry/Vector.cpp src/geometry/Vector.h src/geometry/Point.cpp src/geometry/Point.h)
 
 INCLUDE(FindPkgConfig)
 

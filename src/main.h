@@ -7,8 +7,8 @@
 
 #include <SDL.h>
 #include <SDL_image.h>
-#include "Init.h"
+#include "sdl_utilities/Init.h"
 #include "Game.h"
-#include "Deinit.h"
+#include "sdl_utilities/Deinit.h"
 
 #endif //SDLTEST_MAIN_H

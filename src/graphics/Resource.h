@@ -9,7 +9,7 @@
 #include <list>
 #include <SDL_filesystem.h>
 #include <iostream>
-#include "Logger.h"
+#include "../utilities/Logger.h"
 
 class Resource {
 private:

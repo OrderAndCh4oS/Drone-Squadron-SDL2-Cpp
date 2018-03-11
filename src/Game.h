@@ -7,10 +7,10 @@
 
 #include <SDL_video.h>
 #include <SDL_system.h>
-#include "Texture.h"
+#include "graphics/Texture.h"
 #include "main.h"
 #include "constants.h"
-#include "Resource.h"
+#include "graphics/Resource.h"
 
 class Game {
 private:
