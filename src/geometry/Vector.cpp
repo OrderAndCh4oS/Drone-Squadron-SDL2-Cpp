@@ -13,8 +13,8 @@ Vector::Vector(int x, int y)
 
 Vector::Vector(double x, double y)
 {
-    setX((int) round(x));
-    setY((int) round(y));
+    setX(x);
+    setY(y);
 }
 
 double Vector::getAngle()
