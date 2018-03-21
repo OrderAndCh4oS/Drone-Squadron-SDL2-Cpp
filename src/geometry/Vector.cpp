@@ -43,7 +43,7 @@ void Vector::setLength(double length)
 
 double Vector::getDistanceTo(Vector vector)
 {
-    const int dx = vector.getX()-getX(), dy = vector.getY()-getY();
+    const double dx = vector.getX()-getX(), dy = vector.getY()-getY();
     return sqrt(dx*dx+dy*dy);
 }
 

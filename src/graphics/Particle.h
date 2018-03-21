@@ -12,11 +12,11 @@
 class Particle : protected GameObject {
 protected:
     Vector* velocity;
-    double move{0};
+    double angle{0};
     Texture* texture = nullptr;
     SDL_Rect clip;
 public:
-    Particle(const std::string& id, const Vector& position);
+    Particle(const std::string& id, const Vector& position, double angle);
 
     Vector* getVelocity() const;
 

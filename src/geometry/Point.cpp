@@ -5,7 +5,7 @@
 #include <cmath>
 #include "Point.h"
 
-int Point::getX() const
+double Point::getX() const
 {
     return x;
 }
@@ -17,10 +17,10 @@ void Point::setX(int x)
 
 void Point::setX(double x)
 {
-    Point::x = (int) round(x);
+    Point::x = x;
 }
 
-int Point::getY() const
+double Point::getY() const
 {
     return y;
 }
@@ -32,7 +32,7 @@ void Point::setY(int y)
 
 void Point::setY(double y)
 {
-    Point::y = (int) round(y);
+    Point::y = y;
 }
 
 void Point::add(int x, int y)

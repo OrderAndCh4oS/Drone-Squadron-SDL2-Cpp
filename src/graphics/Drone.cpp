@@ -4,28 +4,24 @@
 
 #include <iostream>
 #include "Drone.h"
-#include "../utilities/Logger.h"
 #include "Resource.h"
 #include "../constants.h"
 
-Drone::Drone(const std::string& id, const Vector& position)
-        :Particle(id, position)
+Drone::Drone(const std::string& id, const Vector& position, double angle)
+        :Particle(id, position, angle)
 {
     std::__cxx11::string imagePath = Resource::path("drone-blue.gif");
     texture->set(imagePath);
-    velocity->setLength(100);
-    velocity->setAngle(-3.14/2);
+    velocity->setLength(40);
+    velocity->setAngle(angle);
 }
 
 void Drone::update()
 {
-    ;
     position.addTo(velocity->multiply(deltaTime->get()));
-    Logger::message(std::cout, "update");
 }
 
 void Drone::draw()
 {
-    texture->render(position.getX(), position.getY());
-    Logger::message(std::cout, "draw");
+    texture->render((int) round(position.getX()), (int) round(position.getY()));
 }

@@ -9,7 +9,7 @@
 
 class Drone : protected Particle {
 public:
-    Drone(const std::string& id, const Vector& position);
+    Drone(const std::string& id, const Vector& position, double angle);
 
     void update() override;
 

@@ -7,14 +7,14 @@
 
 class Point {
 private:
-    int x{};
-    int y{};
+    double x{};
+    double y{};
 public:
-    int getX() const;
+    double getX() const;
 
     void setX(int x);
 
-    int getY() const;
+    double getY() const;
 
     void setY(int y);
 
