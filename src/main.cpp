@@ -10,7 +10,7 @@ int main(int, char**)
     SDL_SetRenderDrawColor(gRenderer, 0x11, 0x11, 0x1F, 0xFF);
 
     bool quit = false;
-    Game game(0, SCREEN_HEIGHT/2);
+    Game game;
     SDL_Event e{};
 
     while (!quit) {

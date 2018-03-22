@@ -15,11 +15,9 @@
 
 class Game {
 private:
-    int x{0}, y{0};
-    double move{0};
     Drone* drone;
 public:
-    Game(int x, int y);
+    Game();
 
     /**
      * Run the game

@@ -4,10 +4,8 @@
 
 #include "Game.h"
 
-Game::Game(int x, int y)
+Game::Game()
 {
-    this->x = x;
-    this->y = y;
     drone = new Drone("drone-one", Vector(SCREEN_WIDTH/2, SCREEN_HEIGHT), 245);
 }
 
