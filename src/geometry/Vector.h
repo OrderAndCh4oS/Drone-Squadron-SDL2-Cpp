@@ -13,9 +13,11 @@ public:
 
     Vector(double x, double y);
 
-    double getAngle();
+    double getAngleRadians();
 
-    void setAngle(double angle);
+    double getAngleDegrees();
+
+    void setAngle(double radians);
 
     double getLength();
 
@@ -40,6 +42,7 @@ public:
     void multiplyBy(Vector vector);
 
     void divideBy(Vector vector);
+
 };
 
 #endif //SDLTEST_VECTOR_H

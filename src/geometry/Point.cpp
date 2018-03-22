@@ -2,7 +2,6 @@
 // Created by sarcoma on 11/03/18.
 //
 
-#include <cmath>
 #include "Point.h"
 
 double Point::getX() const
@@ -61,24 +60,24 @@ void Point::divide(int x, int y)
 
 void Point::add(double x, double y)
 {
-    this->x += (int) round(x);
-    this->y += (int) round(y);
+    this->x += x;
+    this->y += y;
 }
 
 void Point::subtract(double x, double y)
 {
-    this->x -= (int) round(x);
-    this->y -= (int) round(y);
+    this->x -= x;
+    this->y -= y;
 }
 
 void Point::multiply(double x, double y)
 {
-    this->x = (int) round(this->x * x);
-    this->y = (int) round(this->y * y);
+    this->x *= x;
+    this->y *= y;
 }
 
 void Point::divide(double x, double y)
 {
-    this->x = (int) round(this->x / x);
-    this->y = (int) round(this->y / y);
+    this->x /= x;
+    this->y /= y;
 }

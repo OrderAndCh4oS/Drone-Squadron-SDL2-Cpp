@@ -8,15 +8,16 @@
 #include <SDL_render.h>
 #include "GameObject.h"
 #include "Texture.h"
+#include "../geometry/Angle.h"
 
 class Particle : protected GameObject {
 protected:
     Vector* velocity;
-    double angle{0};
+    Angle angle;
     Texture* texture = nullptr;
     SDL_Rect clip;
 public:
-    Particle(const std::string& id, const Vector& position, double angle);
+    Particle(const std::string& id, const Vector& position, double degrees);
 
     Vector* getVelocity() const;
 

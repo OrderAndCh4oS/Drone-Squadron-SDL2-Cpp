@@ -17,16 +17,21 @@ Vector::Vector(double x, double y)
     setY(y);
 }
 
-double Vector::getAngle()
+double Vector::getAngleRadians()
 {
     return atan2(getY(), getX());
 }
 
-void Vector::setAngle(double angle)
+double Vector::getAngleDegrees()
+{
+    return atan2(getY(), getX())*(180/M_PI);
+}
+
+void Vector::setAngle(double radians)
 {
     const double length = getLength();
-    setX(cos(angle)*length);
-    setY(sin(angle)*length);
+    setX(cos(radians)*length);
+    setY(sin(radians)*length);
 }
 
 double Vector::getLength()
@@ -36,7 +41,7 @@ double Vector::getLength()
 
 void Vector::setLength(double length)
 {
-    const double angle = getAngle();
+    const double angle = getAngleRadians();
     setX(cos(angle)*length);
     setY(sin(angle)*length);
 }
@@ -49,7 +54,9 @@ double Vector::getDistanceTo(Vector vector)
 
 double Vector::getAngleTo(Vector vector)
 {
-    return atan2(sin(getAngle()-vector.getAngle()), cos(getAngle()-vector.getAngle()));
+    const double angle = getAngleRadians();
+    const double angleTwo = vector.getAngleRadians();
+    return atan2(sin(angle-angleTwo), cos(angle-angleTwo));
 }
 
 Vector Vector::add(Vector vector)

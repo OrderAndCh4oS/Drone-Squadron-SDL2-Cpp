@@ -8,7 +8,7 @@ Game::Game(int x, int y)
 {
     this->x = x;
     this->y = y;
-    drone = new Drone("drone-one", Vector(SCREEN_WIDTH/2, SCREEN_HEIGHT), -3.14/2);
+    drone = new Drone("drone-one", Vector(SCREEN_WIDTH/2, SCREEN_HEIGHT), 245);
 }
 
 void Game::start()

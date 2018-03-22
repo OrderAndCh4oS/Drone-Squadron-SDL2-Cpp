@@ -7,13 +7,13 @@
 #include "Resource.h"
 #include "../constants.h"
 
-Drone::Drone(const std::string& id, const Vector& position, double angle)
-        :Particle(id, position, angle)
+Drone::Drone(const std::string& id, const Vector& position, double degrees)
+        :Particle(id, position, degrees)
 {
     std::__cxx11::string imagePath = Resource::path("drone-blue.gif");
     texture->set(imagePath);
     velocity->setLength(40);
-    velocity->setAngle(angle);
+    velocity->setAngle(angle.getRadians());
 }
 
 void Drone::update()
@@ -23,5 +23,5 @@ void Drone::update()
 
 void Drone::draw()
 {
-    texture->render((int) round(position.getX()), (int) round(position.getY()));
+    texture->render((int) round(position.getX()), (int) round(position.getY()), nullptr, angle.getDegrees());
 }

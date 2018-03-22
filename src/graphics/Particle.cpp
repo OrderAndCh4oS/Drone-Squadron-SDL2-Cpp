@@ -4,9 +4,10 @@
 
 #include "Particle.h"
 
-Particle::Particle(const std::string& id, const Vector& position, double angle)
-        :GameObject(id, position), angle(angle)
+Particle::Particle(const std::string& id, const Vector& position, double degrees)
+        :GameObject(id, position)
 {
+    this->angle.setDegrees(degrees);
     texture = new Texture();
     velocity = new Vector(0, 0);
 }
