@@ -11,8 +11,6 @@ Game::Game()
 
 void Game::start()
 {
-    SDL_RenderClear(gRenderer);
     drone->draw();
     drone->update();
-    SDL_RenderPresent(gRenderer);
 }

@@ -12,7 +12,7 @@ Drone::Drone(const std::string& id, const Vector& position, double degrees)
 {
     std::__cxx11::string imagePath = Resource::path("drone-blue.gif");
     texture->set(imagePath);
-    velocity->setLength(40);
+    velocity->setLength(100);
     velocity->setAngle(angle.getRadians());
 }
 

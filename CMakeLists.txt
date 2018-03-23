@@ -23,7 +23,7 @@ elseif (${CMAKE_CXX_COMPILER_ID} STREQUAL "MSVC")
     endif()
 endif()
 
-add_executable(SDLTest src/main.cpp src/main.h src/utilities/Logger.cpp src/utilities/Logger.h src/graphics/Texture.cpp src/graphics/Texture.h src/sdl_utilities/Deinit.cpp src/sdl_utilities/Deinit.h src/sdl_utilities/Init.cpp src/sdl_utilities/Init.h src/constants.h src/Game.cpp src/Game.h src/graphics/Resource.cpp src/graphics/Resource.h src/constants.cpp src/utilities/DeltaTime.cpp src/utilities/DeltaTime.h src/geometry/Vector.cpp src/geometry/Vector.h src/geometry/Point.cpp src/geometry/Point.h src/graphics/GameObject.cpp src/graphics/GameObject.h src/graphics/Particle.cpp src/graphics/Particle.h src/graphics/Drone.cpp src/graphics/Drone.h src/geometry/Angle.cpp src/geometry/Angle.h)
+add_executable(SDLTest src/main.cpp src/main.h src/utilities/Logger.cpp src/utilities/Logger.h src/graphics/Texture.cpp src/graphics/Texture.h src/sdl_utilities/Deinit.cpp src/sdl_utilities/Deinit.h src/sdl_utilities/Init.cpp src/sdl_utilities/Init.h src/constants.h src/Game.cpp src/Game.h src/graphics/Resource.cpp src/graphics/Resource.h src/constants.cpp src/utilities/DeltaTime.cpp src/utilities/DeltaTime.h src/geometry/Vector.cpp src/geometry/Vector.h src/geometry/Point.cpp src/geometry/Point.h src/graphics/GameObject.cpp src/graphics/GameObject.h src/graphics/Particle.cpp src/graphics/Particle.h src/graphics/Drone.cpp src/graphics/Drone.h src/geometry/Angle.cpp src/geometry/Angle.h src/ui/Panel.cpp src/ui/Panel.h)
 
 INCLUDE(FindPkgConfig)
 
