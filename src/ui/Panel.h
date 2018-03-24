@@ -6,6 +6,7 @@
 #define SDLTEST_PANEL_H
 
 #include <SDL_quit.h>
+#include <SDL_rect.h>
 #include <vector>
 
 class Panel {

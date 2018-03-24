@@ -25,3 +25,15 @@ void Drone::draw()
 {
     texture->render((int) round(position.getX()), (int) round(position.getY()), nullptr, angle.getDegrees());
 }
+
+void Drone::turnLeft()
+{
+    angle.subtractDegrees(5);
+    velocity->setAngle(angle.getRadians());
+}
+
+void Drone::turnRight()
+{
+    angle.addDegrees(5);
+    velocity->setAngle(angle.getRadians());
+}

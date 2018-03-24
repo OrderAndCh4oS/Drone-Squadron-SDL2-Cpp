@@ -11,7 +11,9 @@ class Button : public Panel {
 public:
     Button(int width, int height, int x, int y);
 
-    void handleMouseUpEvent(int x, int y);
+    virtual void handleMouseUpEvent(int x, int y);
+
+    bool clickIsInButton(int x, int y) const;
 };
 
 #endif //SDLTEST_BUTTON_H

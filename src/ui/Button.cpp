@@ -3,9 +3,7 @@
 //
 
 #include <SDL_rect.h>
-#include <iostream>
 #include "Button.h"
-#include "../utilities/Logger.h"
 
 Button::Button(int width, int height, int x, int y)
         :Panel(width, height, x, y)
@@ -13,10 +11,10 @@ Button::Button(int width, int height, int x, int y)
 
 }
 
-void Button::handleMouseUpEvent(int x, int y)
+bool Button::clickIsInButton(int x, int y) const
 {
-    if (x>this->panel.x && y>this->panel.y && x<this->panel.x+this->panel.w && y>this->panel.y+this->panel.h) {
-        Logger::message(std::cout, "Mouse Up");
-    }
+    return x>panel.x && y>panel.y && x<panel.x+panel.w && y>panel.y+panel.h;
 }
+
+void Button::handleMouseUpEvent(int x, int y) { }
 

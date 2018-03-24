@@ -14,6 +14,10 @@ public:
     void update() override;
 
     void draw() override;
+
+    void turnLeft();
+
+    void turnRight();
 };
 
 #endif //SDLTEST_DRONE_H

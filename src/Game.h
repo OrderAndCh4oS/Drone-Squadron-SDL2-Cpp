@@ -12,11 +12,22 @@
 #include "constants.h"
 #include "graphics/Resource.h"
 #include "graphics/Drone.h"
+#include "buttons/TurnLeft.h"
+#include "ui/View.h"
+#include "buttons/TurnRight.h"
 
 class Game {
 private:
+    bool quit{false};
+    SDL_Event e{};
+    View* gameView;
+    View* menuView;
     Drone* drone;
+    TurnLeft* buttonOne;
+    TurnRight* buttonTwo;
+
 public:
+
     Game();
 
     /**
@@ -24,7 +35,7 @@ public:
      */
     void start();
 
-
+    bool isQuit() const;
 };
 
 #endif //SDLTEST_GAME_H
