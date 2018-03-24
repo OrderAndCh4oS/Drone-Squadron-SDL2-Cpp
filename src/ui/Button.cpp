@@ -20,22 +20,3 @@ void Button::handleMouseUpEvent(int x, int y)
     }
 }
 
-void Button::draw()
-{
-    Panel::draw();
-}
-
-void Button::add(Panel* child)
-{
-    Panel::add(child);
-}
-
-void Button::drawChildren() const
-{
-    Panel::drawChildren();
-}
-
-void Button::setBackgroundColour(Uint8 r, Uint8 g, Uint8 b, Uint8 a)
-{
-    Panel::setBackgroundColour(r, g, b, a);
-}

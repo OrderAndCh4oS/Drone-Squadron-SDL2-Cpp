@@ -19,13 +19,3 @@ void View::draw()
     SDL_RenderFillRect(gRenderer, &fill);
     Panel::drawChildren();
 }
-
-void View::add(Panel* child)
-{
-    Panel::add(child);
-}
-
-void View::setBackgroundColour(Uint8 r, Uint8 g, Uint8 b, Uint8 a)
-{
-    Panel::setBackgroundColour(r, g, b, a);
-}
