@@ -9,10 +9,13 @@
 #include <vector>
 
 class Panel {
-private:
+protected:
     SDL_Rect panel{};
-    Uint8 colour[4] = {0x0, 0xFF, 0x0, 0xFF};
+
     std::vector<Panel*> children;
+
+    Uint8 colour[4] = {0x0, 0xFF, 0x0, 0xFF};
+
 public:
     Panel(int width, int height, int x, int y);
 
@@ -20,9 +23,9 @@ public:
 
     virtual void add(Panel* child);
 
-    const SDL_Rect& getPanel() const;
-
     void drawChildren() const;
+
+    virtual void setBackgroundColour(Uint8 r, Uint8 g, Uint8 b, Uint8 a);
 };
 
 #endif //SDLTEST_PANEL_H

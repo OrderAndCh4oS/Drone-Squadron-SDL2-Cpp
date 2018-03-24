@@ -35,7 +35,11 @@ void Panel::add(Panel* child)
     children.push_back(child);
 }
 
-const SDL_Rect& Panel::getPanel() const
+void Panel::setBackgroundColour(Uint8 r, Uint8 g, Uint8 b, Uint8 a)
 {
-    return panel;
+    colour[0] = r;
+    colour[1] = g;
+    colour[2] = b;
+    colour[3] = a;
 }
+

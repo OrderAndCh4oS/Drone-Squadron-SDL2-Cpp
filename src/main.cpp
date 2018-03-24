@@ -13,9 +13,15 @@ int main(int, char**)
     auto* game = new Game();
     SDL_Event e{};
     auto* gameView = new View{640, 440, 0, 0};
-    auto* menuView = new View{640, 40, 0, 440};
-    auto* button = new Panel{20, 20, 10, 10};
-    menuView->add(button);
+    gameView->setBackgroundColour(0x0, 0x0, 0x25, 0xFF);
+    auto* menuView = new View{640, 480, 0, 440};
+    menuView->setBackgroundColour(0x25, 0x25, 0x40, 0xFF);
+    auto* buttonOne = new Panel{20, 20, 10, 10};
+    buttonOne->setBackgroundColour(0x25, 0xC6, 0x25, 0xFF);
+    menuView->add(buttonOne);
+    auto* buttonTwo = new Panel{20, 20, 40, 10};
+    buttonTwo->setBackgroundColour(0x25, 0xC6, 0x25, 0xFF);
+    menuView->add(buttonTwo);
     while (!quit) {
         while (SDL_PollEvent(&e)) {
             if (e.type==SDL_QUIT) {
@@ -25,9 +31,9 @@ int main(int, char**)
         deltaTime->update();
         SDL_SetRenderDrawColor(gRenderer, 0x11, 0x11, 0x1F, 0xFF);
         SDL_RenderClear(gRenderer);
+        menuView->draw();
         gameView->draw();
         game->start();
-        menuView->draw();
         SDL_RenderPresent(gRenderer);
     }
 
