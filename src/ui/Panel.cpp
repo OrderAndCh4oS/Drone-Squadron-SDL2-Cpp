@@ -20,6 +20,11 @@ void Panel::draw()
 {
     SDL_SetRenderDrawColor(gRenderer, colour[0], colour[1], colour[2], colour[3]);
     SDL_RenderFillRect(gRenderer, &panel);
+    drawChildren();
+}
+
+void Panel::drawChildren() const
+{
     for (Panel* child : children) {
         child->draw();
     }
@@ -28,4 +33,9 @@ void Panel::draw()
 void Panel::add(Panel* child)
 {
     children.push_back(child);
+}
+
+const SDL_Rect& Panel::getPanel() const
+{
+    return panel;
 }

@@ -10,19 +10,19 @@
 
 class Panel {
 private:
-    int width{0};
-    int height{0};
-    int x{0};
-    int y{0};
     SDL_Rect panel{};
     Uint8 colour[4] = {0x0, 0xFF, 0x0, 0xFF};
     std::vector<Panel*> children;
 public:
     Panel(int width, int height, int x, int y);
 
-    void draw();
+    virtual void draw();
 
-    void add(Panel* child);
+    virtual void add(Panel* child);
+
+    const SDL_Rect& getPanel() const;
+
+    void drawChildren() const;
 };
 
 #endif //SDLTEST_PANEL_H
