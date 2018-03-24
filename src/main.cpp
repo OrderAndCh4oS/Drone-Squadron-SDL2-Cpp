@@ -9,13 +9,13 @@ int main(int, char**)
     deltaTime = new DeltaTime();
 
     bool quit = false;
-    Game game;
+    auto* game = new Game();
     SDL_Event e{};
-    Panel panel{100, 100, 0, 0};
-    Panel panelTwo{100, 100, 120, 120};
-    Panel panelThree{100, 100, 240, 240};
-    panelTwo.add(panelThree);
-    panel.add(panelTwo);
+    auto* panel = new Panel{100, 100, 0, 0};
+    auto* panelTwo = new Panel{100, 100, 120, 120};
+    auto* panelThree = new Panel{100, 100, 240, 240};
+    panel->add(panelTwo);
+    panelTwo->add(panelThree);
     while (!quit) {
         while (SDL_PollEvent(&e)) {
             if (e.type==SDL_QUIT) {
@@ -25,8 +25,8 @@ int main(int, char**)
         deltaTime->update();
         SDL_SetRenderDrawColor(gRenderer, 0x11, 0x11, 0x1F, 0xFF);
         SDL_RenderClear(gRenderer);
-        panel.draw();
-        game.start();
+        panel->draw();
+        game->start();
         SDL_RenderPresent(gRenderer);
     }
 

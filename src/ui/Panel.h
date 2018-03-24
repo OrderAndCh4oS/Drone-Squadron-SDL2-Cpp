@@ -16,13 +16,13 @@ private:
     int y{0};
     SDL_Rect panel{};
     Uint8 colour[4] = {0x0, 0xFF, 0x0, 0xFF};
-    std::vector<Panel> children;
+    std::vector<Panel*> children;
 public:
     Panel(int width, int height, int x, int y);
 
     void draw();
 
-    void add(const Panel& child);
+    void add(Panel* child);
 };
 
 #endif //SDLTEST_PANEL_H
