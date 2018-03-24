@@ -23,7 +23,7 @@ public:
 
     virtual void add(Panel* child);
 
-    void drawChildren() const;
+    virtual void drawChildren() const;
 
     virtual void setBackgroundColour(Uint8 r, Uint8 g, Uint8 b, Uint8 a);
 };
